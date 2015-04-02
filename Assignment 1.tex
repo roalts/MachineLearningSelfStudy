@@ -2,8 +2,9 @@
 
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
 \usepackage{graphicx}
+\usepackage{mathtools}
 \usepackage[colorinlistoftodos]{todonotes}
 
 \title{Assignment - 1}
@@ -39,10 +40,98 @@ The problems can be divided into three broad categories: \dots
 
 \subsection{Supervised Learning}
 
-In Supervised Learning the \'right answers\' are given. It is the machine learning task in which the function or algorithm has to inferred from labeled data set or training set, that is the information about the data set is provided and can be plotted on the graph with proper y-axis and x-axis.\\
+In Supervised Learning the 'right answers' are given. It is the machine learning task in which the function or algorithm has to inferred from labeled data set or training set, that is the information about the data set is provided and can be plotted on the graph with proper y-axis and x-axis.\\
 
-The training data consist of a set of training examples. In supervised learning, each example is a pair consisting of an \"input\" variable or feature,(x\'s) typically a vector and a desired \"output\" variable or \"target\" feature (y\'s) also called the supervisory signal and \"m\" is the number of training examples.\\
-A supervised learning algorithm analyzes the training data and produces an inferred function or algorithm, which can be used for mapping new or similar examples. The most optimised algorithm will correctly determine the class of the labels for unseen instances, so that the learning algorithm can generalize the situation from the training data set and apply them to the unseen situations in a meaningful manner.
+\subsection{Unsupervised Learning}
 
+In machine learning, the problem of unsupervised learning is that of trying to find hidden meaningful data in unlabeled data. Since the examples given to the learner are unlabeled, there is no error  to evaluate a potential solution. This distinguishes unsupervised learning from supervised learning and reinforcement learning.
+
+Approaches to unsupervised learning include:
+\begin{enumerate}
+\item Clustering
+\item Social Network Analysis
+\item Astronomical Data Analysis
+\end{enumerate}
+
+\subsection{Reinforcement Learning}
+
+Reinforcement learning is an area of machine learning  concerned with how software agents ought to take actions in an environment so as to maximize a problem. The problem is called approximate dynamic programming. The problem has been studied in the theory of optimal control. In economics and game theory, reinforcement learning may be used to explain how equilibrium may arise.
+
+\section{What problems lie under Supervised Learning?}
+
+Supervised learning takes a known set of input data and known responses to the data, and seeks to build a predictor model that generates reasonable predictions for the response to new data. In these the algorithm has to be inferred from the data set, which is labeled, the information about the data is provided systematically and can be plotted on the graph with definite axis and scale.\\\\The training data consist of a set of training examples. In supervised learning, each example is a pair consisting of an "input" variable or feature,(x's) typically a vector and a desired "output" variable or "target" feature (y's) also called the supervisory signal and "m" is the number of training examples.\\\\A supervised learning algorithm analyzes the training data and produces an inferred function or algorithm, which can be used for mapping new or similar examples. The most optimised algorithm will correctly determine the class of the labels for unseen instances, so that the learning algorithm can generalize the situation from the training data set and apply them to the unseen situations in a meaningful manner. \\\\Suppose you want to predict if someone will have a heart attack within a year. You have a set of data on previous , including age, weight, height, blood pressure, etc. You know if the previous had heart attacks within a year of their data measurements. So the problem is combining all the existing data into a model that can predict whether a new person will have a heart attack within a year. \\\\Supervised learning splits into two broad categories:
+
+\begin{enumerate}
+\item Classification for responses that can have just a few known values, such as 'true' or 'false'. Classification algorithms apply to nominal, not ordinal response values.
+\item Regression for responses that are a real number, such as miles per gallon for a particular car.
+\end{enumerate}
+
+One can have trouble deciding whether you have a classification problem or a regression problem. In that case, create a regression model first, because they are often more computationally efficient.
+
+\section{What are the steps involved in Supervised Learning?}
+
+\subsection{Prepare}
+
+All supervised learning methods start with an input data matrix, usually called X. Each row of X represents one observation. Each column of X represents one variable. Represent missing entries with NaN values in X. Statistics and Machine Learning Toolbox supervised learning algorithms can handle NaN values, either by ignoring them or by ignoring any row with a NaN value.\\\\Y can be used in various data types for response data. Each element in Y represents the response to the corresponding row of X. Observations with missing Y data are ignored.
+
+\begin{enumerate}
+\item For regression, Y must be a numeric vector with the same number of elements as the number of rows of X.
+\item For classification, Y can be any of these data types. This table also contains the method of including missing entries.
+\end{enumerate}
+
+\subsection{Choose an algorithm}
+
+\begin{enumerate}
+\item Speed of training
+\item Memory usage
+\item Predictive accuracy on new data
+\end{enumerate}
+
+\subsection{Fit a model}
+The fitting function depends on the algorithm that has been chosen. Few models are as follows:
+
+\begin{enumerate}
+\item Classification Trees
+\item Regression Trees
+\item Naive Bayes 
+\item Support Vector Machines
+\item Cocktail Party Problem
+
+\end{enumerate}
+
+\section{Introduction to first learning algorithm: Linear Regression}
+
+\subsection{Supervised Learning Notations}
+
+\begin{center}
+  \begin{tabular}{ l | c }
+    \hline
+    Data Set & Training Set \\ \hline
+    m & Number of training examples\\ \hline
+    x's & "Input" variable or feature \\ \hline
+    y's & "Output" variable or "target" variable\\ \hline
+    h & Hypothesis\\ \hline
+  \end{tabular}
+\end{center}
+
+\subsection{Regression Problem: Housing Prices}
+
+\begin{center}
+  \begin{tabular}{ l | c }
+    \hline
+    Size in feet \textsuperscript{2} (x) & Price (y) \\ \hline
+    2104 & 460\\ 
+    1416 & 232 \\ 
+    1520 & 250 \\
+  \end{tabular}
+\end{center}
+(x,y) = One Training Example\\(x \textsuperscript{i}, y \textsuperscript{i}  ) = i\textsuperscript{th} Training Example 
+
+\subsection{How to represent h?}
+
+h maps from x's to y's. The Training set is acted upon a learning algorithm. The learning algorithm uses a hypothesis. In this case the size of the houses is put into the hypothesis to get the estimated price of the house of that particular area. The learning algorithm provides the hypothesis using which the price of the house can be predicted. \\\\Since this is a Linear Regression using one variable or Univariate Linear Regression algorithm the hypothesis will be represented as follows: \\\\
+\begin{center}
+\[h_{$\theta$} (x) = $\theta$_{0} + $\theta$_{1} x\]
+\end{center}
 
 \end{document}
